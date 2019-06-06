@@ -23,7 +23,11 @@
                             <td>{{ $registro->id }}</td>
                             <td>{{ $registro->titulo }}</td>
                             <td>{{ $registro->descricao }}</td>
-                            <td><img width="120" src="{{ asset($registro->imagem) }}" alt="{{ $registro->titulo }}"></td> 
+                            <td>
+                                @if(!empty($registro->imagem))
+                                    <img width="120" src="{{ asset($registro->imagem) }}" alt="{{ $registro->titulo }}">
+                                @endif
+                            </td> 
                             <td>{{ $registro->publicado }}</td>
                             <td>
                                 <a class="btn deep-orange" href="{{route('admin.cursos.editar',$registro->id)}}">Editar</a>
@@ -35,8 +39,7 @@
             </table>
         </div>
         <div class="row">
-        <a class="btn blue" href="{{ route('admin.cursos.adicionar')}}">Adicionar</a>
-
+            <a class="btn blue" href="{{ route('admin.cursos.adicionar')}}">Adicionar</a>
         </div>
     </div>
 @endsection
