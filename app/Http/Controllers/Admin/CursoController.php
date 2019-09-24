@@ -79,4 +79,11 @@ class CursoController extends Controller
         return redirect()->route('admin.cursos');
         
     }
+
+    public function deletar($id){
+        Curso::find($id)->delete();
+        //pode colocar um confirm pra ser mais seguro
+        return redirect()->route('admin.cursos');
+
+    }
 }

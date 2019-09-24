@@ -25,7 +25,7 @@
                             <td>{{ $registro->descricao }}</td>
                             <td>
                                 @if(!empty($registro->imagem))
-                                    <img width="120" src="{{ asset($registro->imagem) }}" alt="{{ $registro->titulo }}">
+                                    <img height="60" src="{{ asset($registro->imagem) }}" alt="{{ $registro->titulo }}">
                                 @endif
                             </td> 
                             <td>{{ $registro->publicado }}</td>
